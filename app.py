@@ -13,7 +13,7 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
 
 LOG_FILE = "rag_query_log.csv"
-hf_token = os.environ["HF_TOKEN"]
+hf_token = os.environ["HF_RUN"]
 
 
 # ========== UTILITY FUNCTIONS ==========
