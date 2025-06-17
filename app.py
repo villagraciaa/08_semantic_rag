@@ -154,7 +154,7 @@ with tab2:
         openai_api_key = st.text_input("🔑 Enter your OpenAI API Key", type="password", placeholder="sk-...")
     else:
         hf_model_name = st.selectbox("🤗 Select a Hugging Face Model", [
-            "mistralai/Magistral-Small-2506"
+            "mistralai/Magistral-Small-2506",
             "mistralai/Mistral-7B-Instruct-v0.2",
             "meta-llama/Meta-Llama-3-8B-Instruct",
             "tiiuae/falcon-7b-instruct"
