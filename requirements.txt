@@ -7,3 +7,4 @@ torch
 transformers
 accelerate
 fpdf
+huggingface_hub 
