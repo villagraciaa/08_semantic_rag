@@ -19,7 +19,7 @@ try:
     from huggingface_hub import login
     login(hf_token)
 except:
-    continue
+    pass
     
 # ========== UTILITY FUNCTIONS ==========
 
