@@ -15,7 +15,12 @@ import torch
 LOG_FILE = "rag_query_log.csv"
 hf_token = os.environ.get("HF_RUN")
 
-
+try:
+    from huggingface_hub import login
+    login(hf_token)
+except:
+    continue
+    
 # ========== UTILITY FUNCTIONS ==========
 
 def extract_text_from_pdf(pdf_file):
