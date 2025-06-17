@@ -13,6 +13,8 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
 
 LOG_FILE = "rag_query_log.csv"
+hf_token = os.environ["HF_TOKEN"]
+
 
 # ========== UTILITY FUNCTIONS ==========
 
@@ -106,8 +108,8 @@ def generate_answer_with_openai(query, top_chunks, openai_api_key, model_name="g
 
 @st.cache_resource
 def load_local_llm(model_name):
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
-    model = AutoModelForCausalLM.from_pretrained(model_name, torch_dtype=torch.float16, device_map="auto")
+    tokenizer = AutoTokenizer.from_pretrained(model_name,use_auth_token=hf_token)
+    model = AutoModelForCausalLM.from_pretrained(model_name, torch_dtype=torch.float16, device_map="auto",use_auth_token=hf_token)
     return tokenizer, model
 
 def generate_answer_local(query, top_chunks, tokenizer, model, max_tokens=256):
