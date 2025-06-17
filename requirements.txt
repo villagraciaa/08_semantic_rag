@@ -1,0 +1,9 @@
+
+streamlit
+PyMuPDF
+sentence-transformers
+scikit-learn
+torch
+transformers
+accelerate
+fpdf
